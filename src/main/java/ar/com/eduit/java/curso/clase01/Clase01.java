@@ -105,7 +105,7 @@ public class Clase01 {
         System.out.println(dl / 3);
 
         //Clase string: tiene comportamientos primitivos, pero es una clase
-        String st = "Esto es una cadena de texto";//se guarda en un vector char
+        String st = "Esto es una cadena de texto!!";//se guarda en un vector char
         System.out.println(st);
 
         //Recorrido de el String st como un vector
@@ -124,7 +124,33 @@ public class Clase01 {
             System.out.print(car);
         }
         System.out.println();
-
+        
+        //Operador Ternario ? si esto es verdad, tengo que restar 32, else serian los :
+        for(int i = 0;i<st.length();i++){
+            char car = st.charAt(i);
+            System.out.print((car>=97&&car<=122)?car-=32:car);
+        }
+        System.out.println();
+        
+               
+        funcion2("hola",2);
+        funcion2(null,2);
+        funcion2("hola",20);
     }//end main   
-
+    
+    public static boolean funcion(boolean x){
+       return x;
+        /*if(x){
+            return true;
+        }
+        return false;*/
+    }
+    
+    public static void funcion2(String texto, int index){
+        //Una forma de evitar las lineas y muchas validaciones, pregunto por el caso incorrecto para cortar la funcion antes
+        //Operador binario tiene un solo | como un or excluyente, mira el primer el termino y mira el segundo (investigala siguiente condicion)
+        //Operador Logico || mira el primero, mira el operador si ya obtiene resultado lo corta, sino lo mira
+        if(texto == null || index>=texto.length()) return;
+        System.out.println(texto.charAt(index));
+    }
 }//end Clase01
