@@ -136,6 +136,17 @@ public class Clase01 {
         funcion2("hola",2);
         funcion2(null,2);
         funcion2("hola",20);
+        
+        //Imprimir el string en minisculas
+        st = "HoLa";
+        for(int i = 0; i<st.length();i++){
+            char car = st.charAt(i);
+            System.out.print((car>=65&&car<=90)?car+=32:car);
+        }
+        System.out.println();
+        
+        System.out.println(st.toUpperCase());
+        System.out.println(st.toLowerCase());
     }//end main   
     
     public static boolean funcion(boolean x){
