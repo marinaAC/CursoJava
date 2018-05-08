@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="DiagramaRelaciones">
+  <ClassDiagramComponents>
+    <Class name="Cuenta" package="ar.com.eduit.curso.java.entities" visibility="public" xPosition="332.0" yPosition="32.0">
+      <Fields>
+        <Field name="nro" type="int" visibility="private"/>
+        <Field name="moneda" type="String" visibility="private"/>
+        <Field name="saldo" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="nro"/>
+          <Argument type="String" name="moneda"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="depositar" returnType="float" visibility="public">
+          <Argument type="float" name="monto"/>
+        </Method>
+        <Method name="debitar" returnType="float" visibility="public">
+          <Argument type="float" name="monto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ClientePersona" package="ar.com.eduit.curso.java.entities" visibility="public" xPosition="64.0" yPosition="32.0">
+      <Fields>
+        <Field name="nro" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="cuenta" type="Cuenta" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="nro"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="ClienteEmpresa" package="ar.com.eduit.curso.java.entities" visibility="public" xPosition="572.0" yPosition="32.0">
+      <Fields>
+        <Field name="nro" type="int" visibility="private"/>
+        <Field name="razonSocial" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="cuentas" type="List&lt;Cuenta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="nro"/>
+          <Argument type="String" name="razonSocial"/>
+          <Argument type="String" name="direccion"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cuentas" source="ar.com.eduit.curso.java.entities.ClienteEmpresa" target="ar.com.eduit.curso.java.entities.Cuenta" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <HasRelation name="cuenta" source="ar.com.eduit.curso.java.entities.ClientePersona" target="ar.com.eduit.curso.java.entities.Cuenta" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
