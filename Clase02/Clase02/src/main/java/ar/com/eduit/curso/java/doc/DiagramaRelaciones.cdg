@@ -15,10 +15,10 @@
         </Constructor>
       </Constructors>
       <Methods>
-        <Method name="depositar" returnType="float" visibility="public">
+        <Method name="depositar" returnType="void" visibility="public">
           <Argument type="float" name="monto"/>
         </Method>
-        <Method name="debitar" returnType="float" visibility="public">
+        <Method name="debitar" returnType="void" visibility="public">
           <Argument type="float" name="monto"/>
         </Method>
       </Methods>

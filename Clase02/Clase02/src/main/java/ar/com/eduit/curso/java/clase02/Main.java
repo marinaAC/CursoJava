@@ -128,5 +128,13 @@ public class Main {
         System.out.println(empleado1);
         
         //Construir diagrama UML
+        /*
+         * Operadores de Visibilidad 
+           Modificador              Alcance
+           omitido(default)         es visible desde la misma clase y clases del mismo paquete.
+           public                   es visible desde cualquier clase de cualquier paquete
+           private                  solo es visibles desde lamisma clase.
+           protected                Es visible desde la misma clase y clases hijas, mismo paquete.
+        */
     }//end main
 }//end Clase02
