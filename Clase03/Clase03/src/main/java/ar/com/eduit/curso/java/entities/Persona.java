@@ -4,7 +4,7 @@ package ar.com.eduit.curso.java.entities;
  *Las clases abstractas no se pueden crear objetos, no se pueden instanciar
  * final: no puedo crear clases hijas
  */
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private String apellido;
     private Direccion direccion;
@@ -14,7 +14,9 @@ public class Persona {
         this.apellido = apellido;
         this.direccion = direccion;
     }
-
+    public void Saludar(){
+        System.out.println("Hola soy una persona");
+    }
     @Override
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion + '}';
