@@ -52,5 +52,15 @@ public class TestHerencia {
         Empleado emp1 = (Empleado)p1;
         //operador ternario
         Cliente cli1 = (p2 instanceof Cliente)?(Cliente)p2:null;
+        
+        
+        /*
+            Interfaces en Java:
+            -Una interfaz no tiene código en sus métodos, las clases que implementan la interface debe implementar el código de los metodos.
+            -No tiene atributos, ni constructores.
+            -Todos los miembros de la interface son publicos
+            -Una clase puede implementar muchas interfaces
+            A partir de Java 8 existen métodos default (pueden tener código  a dentro de los metodos);
+        */
     }
 }
