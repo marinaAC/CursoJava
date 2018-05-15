@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -57,6 +58,9 @@ public class FXMLDocumentController implements Initializable {
     private RadioButton radViudo;
     @FXML
     private RadioButton radDivorciado;
+    //en el ? es de generics
+    @FXML
+    private ComboBox<String> cmbColores;
     
     @FXML
     private void aceptar(ActionEvent event){
@@ -72,13 +76,20 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Formulario inicializado");
         armarListaCheck();
-        grupoEstado();
+        armarGrupoEstado();
+        cargarCmbColores();
     }    
+    
+    private void cargarCmbColores(){
+        cmbColores.getItems().addAll("Rojo","Verde","Azul","Blanco","Negro","Amarillo","Gris");
+        //cmbColores.getSelectionModel().selectFirst();
+    }
 
-    private void grupoEstado() {
+    private void armarGrupoEstado() {
         //se le agrega la logica para que solo se pueda seleccionar de a uno
         grupoEstado= new ToggleGroup();
         grupoEstado.getToggles().addAll(radSoltero,radCasado,radViudo,radDivorciado);
+        grupoEstado.selectToggle(radSoltero);
     }    
 
     private void armarListaCheck() {
@@ -103,6 +114,8 @@ public class FXMLDocumentController implements Initializable {
         for(CheckBox ch:listaCheck){
             if(ch.isSelected())texto+="Tiene "+ch.getText()+".\n";
         }
+        texto+="Estado civil: "+((RadioButton)grupoEstado.getSelectedToggle()).getText()+".\n";
+        texto+="Color: "+cmbColores.getValue()+".\n";
         limpiar();
         txaTexto.setText(texto);
     }
@@ -115,6 +128,7 @@ public class FXMLDocumentController implements Initializable {
         for(CheckBox ch:listaCheck){
             ch.setSelected(false);
         }
+        grupoEstado.selectToggle(radSoltero);
         txtNombre.requestFocus();
     }
     
