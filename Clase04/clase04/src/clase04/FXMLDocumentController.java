@@ -81,10 +81,17 @@ public class FXMLDocumentController implements Initializable {
     }    
     
     private void cargarCmbColores(){
-        cmbColores.getItems().addAll("Rojo","Verde","Azul","Blanco","Negro","Amarillo","Gris");
+        //cmbColores.getItems().addAll("Rojo","Verde","Azul","Blanco","Negro","Amarillo","Gris");
         //cmbColores.getSelectionModel().selectFirst();
+        //utilizamos el mapa de colores, con un diccionario dentro, para poder realizar una clave de traduccion facil
+        MapaColores.getMap().forEach((k,v)->cmbColores.getItems().add(k));
+        cmbColores.getSelectionModel().selectFirst();
     }
-
+    
+    /**
+     * Los elementos radio en java, para que funcionen tienen queestar agrupados en algo logico
+     * 
+     */ 
     private void armarGrupoEstado() {
         //se le agrega la logica para que solo se pueda seleccionar de a uno
         grupoEstado= new ToggleGroup();
@@ -116,6 +123,7 @@ public class FXMLDocumentController implements Initializable {
         }
         texto+="Estado civil: "+((RadioButton)grupoEstado.getSelectedToggle()).getText()+".\n";
         texto+="Color: "+cmbColores.getValue()+".\n";
+        txaTexto.setStyle("-fx-control-inner-background:"+MapaColores.getMap().get(cmbColores.getValue())+";");
         limpiar();
         txaTexto.setText(texto);
     }
@@ -132,9 +140,6 @@ public class FXMLDocumentController implements Initializable {
         txtNombre.requestFocus();
     }
     
-    /**
-     * Los elementos radio en java, para que funcionen tienen queestar agrupados en algo logico
-     * 
-     */    
+   
     
 }
