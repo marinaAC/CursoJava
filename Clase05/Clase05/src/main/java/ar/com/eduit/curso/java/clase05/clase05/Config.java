@@ -12,10 +12,11 @@ public class Config extends javax.swing.JFrame {
     public Config() {
         initComponents();
         cargarElementos();
+        new Thread(new HiloHora(txtFecha)).start();
     }
     
     public void cargarElementos(){
-        txtFecha.setText(LocalDateTime.now()+" ");
+        //txtFecha.setText(LocalDateTime.now()+" ");
         txtHomeDir.setText(System.getProperty("user.dir"));
         txtJava.setText(System.getProperty("java.version"));
         txtLenguaje.setText(System.getProperty("user.language"));
