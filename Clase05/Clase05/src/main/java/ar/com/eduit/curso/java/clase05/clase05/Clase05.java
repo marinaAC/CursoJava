@@ -175,5 +175,28 @@ public class Clase05 {
         System.out.println("Hola");
         System.out.println("Hola");
         System.err.println("Ocurrio un error.");
+        
+        //metodo .exit()
+        //cierra el runtime
+        //0 ok
+        //1 error
+        //-1 Warning
+        //System.exit(0);
+        //System.out.println("Esta linea no se ejecuta. ");
+        
+        //.getProperties()
+        System.out.println(System.getProperties());
+        System.out.println("---------------------------------------------");
+        System.getProperties().forEach((k,v)->System.out.println(k+":  "+v));
+        System.out.println("---------------------------------------------");
+        System.getenv().forEach((k,v)->System.out.println(k+": "+v));
+        
+        System.out.println("---------------------------------------------");
+        
+        //.getProperty()
+        System.out.println(System.getProperty("os.name"));
+        System.out.println(System.getProperty("user.name"));
+        System.out.println(System.getProperty("java.version"));
+        System.out.println(System.getenv("NUMBER_OF_PROCESSORS"));
     }
 }
