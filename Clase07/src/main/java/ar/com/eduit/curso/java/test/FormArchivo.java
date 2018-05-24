@@ -47,8 +47,15 @@ public class FormArchivo extends javax.swing.JFrame {
         btnBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ABM ARCHIVOS");
 
         jLabel1.setText("Colores:");
+
+        txtColores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtColoresActionPerformed(evt);
+            }
+        });
 
         btbAgregar.setText("Agregar");
         btbAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -122,13 +129,7 @@ public class FormArchivo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btbAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbAgregarActionPerformed
-        //Evento agregar
-        String color = txtColores.getText();
-        if(color.length()<3 || color.length()>20) return;
-        archivo.addLine(color);
-        txtColores.setText("");
-        txtColores.requestFocus();
-        cargar();
+        if(agregar()) return;
     }//GEN-LAST:event_btbAgregarActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
@@ -139,6 +140,22 @@ public class FormArchivo extends javax.swing.JFrame {
         archivo.removeLine(color);
         cargar();
     }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void txtColoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColoresActionPerformed
+        if(agregar()) return;
+    }//GEN-LAST:event_txtColoresActionPerformed
+
+    private boolean agregar() {
+        String color = txtColores.getText();
+        if (color.length()<3 || color.length()>20) {
+            return true;
+        }
+        archivo.addLine(color);
+        txtColores.setText("");
+        txtColores.requestFocus();
+        cargar();
+        return false;
+    }
 
     
     /**
