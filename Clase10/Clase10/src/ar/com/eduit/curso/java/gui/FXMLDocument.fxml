@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="572.0" prefWidth="578.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ar.com.eduit.curso.java.gui.FXMLDocumentController">
+   <children>
+      <TabPane layoutX="38.0" layoutY="31.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Alumnos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="140.0" text="Nombre:" />
+                        <TextField fx:id="txtNombre" layoutX="189.0" layoutY="10.0" prefHeight="25.0" prefWidth="363.0" />
+                        <TextField fx:id="txtApellido" layoutX="189.0" layoutY="50.0" prefHeight="25.0" prefWidth="364.0" />
+                        <Label layoutX="14.0" layoutY="54.0" prefHeight="17.0" prefWidth="140.0" text="Apellido:" />
+                        <Label layoutX="14.0" layoutY="93.0" prefHeight="17.0" prefWidth="140.0" text="Edad:" />
+                        <TextField fx:id="txtEdad" layoutX="189.0" layoutY="89.0" prefHeight="25.0" prefWidth="365.0" />
+                        <Label layoutX="14.0" layoutY="131.0" prefHeight="17.0" prefWidth="140.0" text="Curso:" />
+                        <Button layoutX="446.0" layoutY="164.0" mnemonicParsing="false" onAction="#agregarAlumno" prefHeight="25.0" prefWidth="108.0" text="Agregar" />
+                        <Label fx:id="lblInfoAlumno" layoutX="14.0" layoutY="177.0" prefHeight="17.0" prefWidth="417.0" />
+                        <ComboBox fx:id="cmbCursos" layoutX="189.0" layoutY="127.0" prefHeight="25.0" prefWidth="366.0" />
+                        <TableView fx:id="tblAlumnos" layoutX="14.0" layoutY="241.0" prefHeight="291.0" prefWidth="542.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="16.0" layoutY="214.0" prefHeight="17.0" prefWidth="140.0" text="Apellido:" />
+                        <TextField fx:id="txtBuscarApe" layoutX="77.0" layoutY="210.0" onKeyReleased="#buscarApe" prefHeight="25.0" prefWidth="477.0" promptText="Busque por apellido" />
+                        <Button layoutX="323.0" layoutY="164.0" mnemonicParsing="false" onAction="#borrarAlumno" prefHeight="25.0" prefWidth="108.0" text="Borrar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Cursos">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="448.0" prefWidth="650.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
